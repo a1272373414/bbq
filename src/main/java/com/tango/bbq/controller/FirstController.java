@@ -15,8 +15,8 @@ public class FirstController {
 //	  model.addAttribute("testkey","testvalue");
 //	  model.addAttribute(map);
 //	  model.put("testkey","testvalue");
-	  model.addAttribute("date","2016/11/10-1,2016/11/10-2,2016/11/10-3,2016/11/10-4,2016/11/10-5,2016/11/10-6,2016/11/10-7");
-	  model.addAttribute("data","3000,3600,3204,3640,3690,3900,3100");
+	  model.addAttribute("date","2016/11/10-1h,2016/11/10-2h,2016/11/10-3h,2016/11/10-4h,2016/11/10-5h,2016/11/10-6h,2016/11/10-7h");
+	  model.addAttribute("data","2100,3600,2404,3640,4690,3900,3100");
       return "monitorChart";
   }
 }

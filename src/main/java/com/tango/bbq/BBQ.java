@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @SpringBootApplication
 @ServletComponentScan
-public class App extends WebMvcConfigurerAdapter{
+public class BBQ extends WebMvcConfigurerAdapter{
 //public class App {
 //    @RequestMapping("/")
 //    public String home() {
@@ -36,7 +36,7 @@ public class App extends WebMvcConfigurerAdapter{
 //	  }
     
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(BBQ.class, args);
     }
 }
 
