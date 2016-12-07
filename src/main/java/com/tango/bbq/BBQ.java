@@ -1,8 +1,11 @@
 package com.tango.bbq;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -15,6 +18,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @SpringBootApplication
 @ServletComponentScan
+@EnableAutoConfiguration(exclude = {HibernateJpaAutoConfiguration.class})
+@ComponentScan({"com.tango.util"})
+@ComponentScan({"com.tango.controller"})
 public class BBQ extends WebMvcConfigurerAdapter{
 //public class App {
 //    @RequestMapping("/")
