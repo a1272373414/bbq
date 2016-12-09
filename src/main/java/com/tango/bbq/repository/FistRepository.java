@@ -20,7 +20,6 @@ public class FistRepository {
 		Map<String, String> resultMap = new HashMap<String, String>();
 		String sql = "select avg(0h) as 0h, avg(1h) as 1h, avg(2h) as 2h, avg(3h) as 3h, avg(4h) as 4h, avg(5h) as 5h, avg(6h) as 6h, avg(7h) as 7h, avg(8h) as 8h, avg(9h) as 9h, avg(10h) as 10h, avg(11h) as 11h, avg(12h) as 12h, avg(13h) as 13h, avg(14h) as 14h, avg(15h) as 15h, avg(16h) as 16h, avg(17h) as 17h, avg(18h) as 18h, avg(19h) as 19h, avg(20h) as 20h, avg(21h) as 21h, avg(22h) as 22h, avg(23h) as 23h "
 				+ "from t_monitor_taking where record_time = ?";
-//		List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
 		List<Map<String, Object>> list = jdbcTemplate.queryForList(sql, new Object[]{date});
 		
 		StringBuffer sbdata = new StringBuffer();
