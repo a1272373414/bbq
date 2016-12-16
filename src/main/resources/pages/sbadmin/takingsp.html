@@ -36,7 +36,7 @@
 
     <div id="wrapper">
 
-        <!-- Navigation -->
+          <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -63,7 +63,7 @@
                                         <em>Yesterday</em>
                                     </span>
                                 </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend../../static.</div>
                             </a>
                         </li>
                         <li class="divider"></li>
@@ -75,7 +75,7 @@
                                         <em>Yesterday</em>
                                     </span>
                                 </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend../../static.</div>
                             </a>
                         </li>
                         <li class="divider"></li>
@@ -87,7 +87,7 @@
                                         <em>Yesterday</em>
                                     </span>
                                 </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend../../static.</div>
                             </a>
                         </li>
                         <li class="divider"></li>
@@ -264,98 +264,48 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search..." />
+                                <input type="text" class="form-control" placeholder="Search../../static."/>
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
                             </div>
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a th:href="@{/}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a th:href="@{/monitor}">Speed</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a th:href="@{/chartFlot}">Flot Charts</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a th:href="@{/tables}"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li class="active">
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a class="active" href="blank.html">Blank Page</a>
+                               <li>
+                                    <a  th:href="@{/monitor}">Monitor Page</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Login Page</a>
+                                    <a href="sbadmin/blank.html" th:href="@{/sbadmin/blank}">Blank Page</a>
+                                    <!-- <a th:href="@{http://www.thymeleaf.org}">thymeleaf.org</a> -->
+                                </li>
+                                <li>
+                                    <a href="login.html" th:href="@{/login}">Login Page</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -424,7 +374,7 @@
 			var dataArray = [[${data}]].split(",");
 			var dateArray = [[${date}]].split(",");
 			
-			option = {
+			optionTaking = {
 			    tooltip: {
 			        trigger: 'axis',
 			        position: function (pt) {
@@ -499,6 +449,81 @@
 			        }
 			    ]
 			};
+			optionHandon = {
+				    tooltip: {
+				        trigger: 'axis',
+				        position: function (pt) {
+				            return [pt[0], '10%'];
+				        }
+				    },
+				    title: {
+				        left: 'center',
+				        text: '派件时速',
+				    },
+				    toolbox: {
+				        feature: {
+				            dataZoom: {
+				                yAxisIndex: 'none'
+				            },
+				            restore: {},
+				            saveAsImage: {}
+				        }
+				    },
+				    xAxis: {
+				        type: 'category',
+				        boundaryGap: false,
+				        data: dateArray
+				    },
+				    yAxis: {
+				        type: 'value',
+				        boundaryGap: [0, '100%']
+				    },
+				    dataZoom: [{
+				        type: 'inside',
+				        start: 0,
+				        end: 10
+				    }, {
+				        start: 0,
+				        end: 10,
+				        handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+				        handleSize: '80%',
+				        handleStyle: {
+				            color: '#fff',
+				            shadowBlur: 3,
+				            shadowColor: 'rgba(0, 0, 0, 0.6)',
+				            shadowOffsetX: 2,
+				            shadowOffsetY: 2
+				        }
+				    }],
+				    series: [
+				        {
+				            name:'生产数据',
+				            type:'line',
+				            smooth:true,
+				            symbol: 'none',
+				            sampling: 'average',
+				            itemStyle: {
+				                normal: {
+				                    color: 'rgb(255, 70, 131)'
+				                }
+				            },
+				            areaStyle: {
+				                normal: {
+				                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+				                        offset: 0,
+				                         /* color: 'rgb(255, 158, 68)'  */
+				                         color:'rgb(37,113,139)' 
+				                    }, {
+				                        offset: 1,
+				                        /* color: 'rgb(255, 70, 131)'  */
+				                         color: 'rgb(52, 67, 44)' 
+				                    }])
+				                }
+				            },
+				            data: dataArray
+				        }
+				    ]
+				};
 
 		/* 	var optionc = getOption(fun);
 
@@ -506,12 +531,12 @@
 				return
 			}; */
 			
-			if (option && typeof option === "object") {
-			    myChart.setOption(option, true);
+			if (optionTaking && typeof optionTaking === "object") {
+			    myChart.setOption(optionTaking, true);
 			}   
 
-			if (option && typeof option === "object") {
-			    myCharthandon.setOption(option, true);
+			if (optionHandon && typeof optionHandon === "object") {
+			    myCharthandon.setOption(optionHandon, true);
 			}   
         /*]]>*/
        </script>
