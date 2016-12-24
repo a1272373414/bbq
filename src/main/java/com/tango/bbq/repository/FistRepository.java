@@ -1,6 +1,10 @@
 package com.tango.bbq.repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -8,7 +12,12 @@ import java.util.Map.Entry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.StringUtils;
+
+import com.tango.bbq.entity.Track;
+import com.tango.bbq.util.DateUtils;
 
 @Repository
 public class FistRepository {
@@ -28,6 +37,10 @@ public class FistRepository {
     @Autowired
     @Qualifier("otherJdbcTemplate")
     JdbcTemplate jdbcTemplate4;
+    
+    @Autowired
+    @Qualifier("other1JdbcTemplate")
+    JdbcTemplate jdbcTemplate5;
 	
 	public Map<String, String> queryTest(String node, String date){
 		Map<String, String> resultMap = new HashMap<String, String>();
@@ -62,6 +75,15 @@ public class FistRepository {
 			}
 		}
 		
+		String sql5 = "select waybill_no from t_exp_op_record_container_unsuccess where waybill_no = ?";
+		List<Map<String, Object>> list5 = jdbcTemplate5.queryForList(sql5, new Object[]{new String("000000718424")});
+		if(list5 != null && list5.size() > 0){
+			Map<String, Object> avgMap = list5.get(0);
+			for(Entry<String, Object> entry: avgMap.entrySet()){
+				System.out.println((jdbcTemplate5+"*****************/"+entry.getValue().toString()));
+			}
+		}
+		
 		
 		StringBuffer sbdata = new StringBuffer();
 		StringBuffer sbdate = new StringBuffer();
@@ -83,6 +105,33 @@ public class FistRepository {
 		}
 		
 		return resultMap;
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public List<Track> queryTrack(String waybillNo){
+		
+		if(StringUtils.isEmpty(waybillNo)){
+			return null;
+		}
+		
+		String sql = "select id,waybill_no,org_code,op_code,create_time,upload_time,error_message from t_exp_op_record_signature_unsuccess where waybill_no = ? limit 20;";
+		List<Track> listMap = new ArrayList<Track>();
+		List<Map<String, Object>> list = jdbcTemplate2.queryForList(sql, new Object[]{new String(waybillNo)});
+		Iterator it = list.iterator();
+		while(it.hasNext()){
+			Map<String, Object> map= (Map<String, Object>)it.next();
+			Track track = new Track();
+			track.setCreateTime(DateUtils.convert(map.get("create_time").toString()));
+			track.setErrorMessage(map.get("error_message").toString());
+			track.setId(map.get("id").toString());
+			track.setOpCode(map.get("op_code").toString());
+			track.setOrgCode(map.get("org_code").toString());
+			track.setUploadTime(DateUtils.convert(map.get("upload_time").toString()));
+			track.setWaybillNo(map.get("waybill_no").toString());
+			listMap.add(track);
+		}
+		
+		return listMap;
 	}
 	
     

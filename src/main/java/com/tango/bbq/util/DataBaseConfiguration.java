@@ -13,6 +13,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import com.alibaba.druid.pool.DruidDataSource;
 
 @Configuration
+@PropertySource("classpath:dbConfig/front_133_3306.properties")
+@PropertySource("classpath:dbConfig/front_133_3307.properties")
 public class DataBaseConfiguration{
 	
 //	private RelaxedPropertyResolver propertyResolver;  
@@ -69,6 +71,13 @@ public class DataBaseConfiguration{
     public DataSource otherDataSource(){
       return new DruidDataSource(); 
     }
+    
+    @Bean(name = "other1DataSource")
+    @Qualifier("other1DataSource")
+    @ConfigurationProperties(prefix = "spring.datasource.mysql_193_133_3307")
+    public DataSource other1DataSource(){
+      return new DruidDataSource(); 
+    }
 
     
     
@@ -90,6 +99,11 @@ public class DataBaseConfiguration{
     
     @Bean(name = "otherJdbcTemplate")
     public JdbcTemplate otherJdbcTemplate(@Qualifier("otherDataSource")DataSource dataSource){
+        return new JdbcTemplate(dataSource);
+    }
+    
+    @Bean(name = "other1JdbcTemplate")
+    public JdbcTemplate other1JdbcTemplate(@Qualifier("other1DataSource")DataSource dataSource){
         return new JdbcTemplate(dataSource);
     }
  

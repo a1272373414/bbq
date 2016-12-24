@@ -1,38 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 <head>
 
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+<title>SB Admin 2 - Bootstrap Admin Theme</title>
 
 
-    <!-- DataTables CSS -->
-    <link th:href="@{vendor/datatables-plugins/dataTables.bootstrap.css}" rel="stylesheet" media="screen"/>
+<!-- DataTables CSS -->
+<link th:href="@{vendor/datatables-plugins/dataTables.bootstrap.css}"
+	rel="stylesheet" media="screen" />
 
-    <!-- DataTables Responsive CSS -->
-    <link th:href="@{vendor/datatables-responsive/dataTables.responsive.css}" rel="stylesheet" media="screen"/>
+<!-- DataTables Responsive CSS -->
+<link
+	th:href="@{vendor/datatables-responsive/dataTables.responsive.css}"
+	rel="stylesheet" media="screen" />
 
-	 <!-- Bootstrap Core CSS -->
-    <link   th:href="@{vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet"  media="screen"></link>
-    <link   th:href="@{vendor/metisMenu/metisMenu.min.css}"  rel="stylesheet" media="screen"></link>
-    <!-- Custom CSS -->
-    <link  th:href="@{dist/css/sb-admin-2.css}"  rel="stylesheet" media="screen"></link>
+<!-- Bootstrap Core CSS -->
+<link th:href="@{vendor/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen"></link>
+<link th:href="@{vendor/metisMenu/metisMenu.min.css}" rel="stylesheet"
+	media="screen"></link>
+<!-- Custom CSS -->
+<link th:href="@{dist/css/sb-admin-2.css}" rel="stylesheet"
+	media="screen"></link>
 
-    <!-- Morris Charts CSS -->
-    <link  th:href="@{vendor/morrisjs/morris.css}"  rel="stylesheet" media="screen"></link>
+<!-- Morris Charts CSS -->
+<link th:href="@{vendor/morrisjs/morris.css}" rel="stylesheet"
+	media="screen"></link>
 
-    <!-- Custom Fonts -->
-    <link  th:href="@{vendor/font-awesome/css/font-awesome.min.css}" rel="stylesheet"  media="screen"></link>
+<!-- Custom Fonts -->
+<link th:href="@{vendor/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet" media="screen"></link>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -41,363 +49,358 @@
 
 <body>
 
-    <div id="wrapper">
+	<div id="wrapper">
 
-         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
-            </div>
-            <!-- /.navbar-header -->
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-static-top" role="navigation"
+			style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+			</div>
+			<!-- /.navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend../../static.</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend../../static.</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend../../static.</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-tasks">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 1</strong>
-                                        <span class="pull-right text-muted">40% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 2</strong>
-                                        <span class="pull-right text-muted">20% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                            <span class="sr-only">20% Complete</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 3</strong>
-                                        <span class="pull-right text-muted">60% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 4</strong>
-                                        <span class="pull-right text-muted">80% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete (danger)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Tasks</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-tasks -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
+			<ul class="nav navbar-top-links navbar-right">
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#"> <i
+						class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+				</a>
+					<ul class="dropdown-menu dropdown-messages">
+						<li><a href="#">
+								<div>
+									<strong>John Smith</strong> <span class="pull-right text-muted">
+										<em>Yesterday</em>
+									</span>
+								</div>
+								<div>Lorem ipsum dolor sit amet, consectetur adipiscing
+									elit. Pellentesque eleifend../../static.</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="#">
+								<div>
+									<strong>John Smith</strong> <span class="pull-right text-muted">
+										<em>Yesterday</em>
+									</span>
+								</div>
+								<div>Lorem ipsum dolor sit amet, consectetur adipiscing
+									elit. Pellentesque eleifend../../static.</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="#">
+								<div>
+									<strong>John Smith</strong> <span class="pull-right text-muted">
+										<em>Yesterday</em>
+									</span>
+								</div>
+								<div>Lorem ipsum dolor sit amet, consectetur adipiscing
+									elit. Pellentesque eleifend../../static.</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a class="text-center" href="#"> <strong>Read
+									All Messages</strong> <i class="fa fa-angle-right"></i>
+						</a></li>
+					</ul> <!-- /.dropdown-messages --></li>
+				<!-- /.dropdown -->
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#"> <i class="fa fa-tasks fa-fw"></i>
+						<i class="fa fa-caret-down"></i>
+				</a>
+					<ul class="dropdown-menu dropdown-tasks">
+						<li><a href="#">
+								<div>
+									<p>
+										<strong>Task 1</strong> <span class="pull-right text-muted">40%
+											Complete</span>
+									</p>
+									<div class="progress progress-striped active">
+										<div class="progress-bar progress-bar-success"
+											role="progressbar" aria-valuenow="40" aria-valuemin="0"
+											aria-valuemax="100" style="width: 40%">
+											<span class="sr-only">40% Complete (success)</span>
+										</div>
+									</div>
+								</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="#">
+								<div>
+									<p>
+										<strong>Task 2</strong> <span class="pull-right text-muted">20%
+											Complete</span>
+									</p>
+									<div class="progress progress-striped active">
+										<div class="progress-bar progress-bar-info" role="progressbar"
+											aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+											style="width: 20%">
+											<span class="sr-only">20% Complete</span>
+										</div>
+									</div>
+								</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="#">
+								<div>
+									<p>
+										<strong>Task 3</strong> <span class="pull-right text-muted">60%
+											Complete</span>
+									</p>
+									<div class="progress progress-striped active">
+										<div class="progress-bar progress-bar-warning"
+											role="progressbar" aria-valuenow="60" aria-valuemin="0"
+											aria-valuemax="100" style="width: 60%">
+											<span class="sr-only">60% Complete (warning)</span>
+										</div>
+									</div>
+								</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="#">
+								<div>
+									<p>
+										<strong>Task 4</strong> <span class="pull-right text-muted">80%
+											Complete</span>
+									</p>
+									<div class="progress progress-striped active">
+										<div class="progress-bar progress-bar-danger"
+											role="progressbar" aria-valuenow="80" aria-valuemin="0"
+											aria-valuemax="100" style="width: 80%">
+											<span class="sr-only">80% Complete (danger)</span>
+										</div>
+									</div>
+								</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a class="text-center" href="#"> <strong>See
+									All Tasks</strong> <i class="fa fa-angle-right"></i>
+						</a></li>
+					</ul> <!-- /.dropdown-tasks --></li>
+				<!-- /.dropdown -->
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#"> <i class="fa fa-bell fa-fw"></i>
+						<i class="fa fa-caret-down"></i>
+				</a>
+					<ul class="dropdown-menu dropdown-alerts">
+						<li><a href="#">
+								<div>
+									<i class="fa fa-comment fa-fw"></i> New Comment <span
+										class="pull-right text-muted small">4 minutes ago</span>
+								</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="#">
+								<div>
+									<i class="fa fa-twitter fa-fw"></i> 3 New Followers <span
+										class="pull-right text-muted small">12 minutes ago</span>
+								</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="#">
+								<div>
+									<i class="fa fa-envelope fa-fw"></i> Message Sent <span
+										class="pull-right text-muted small">4 minutes ago</span>
+								</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="#">
+								<div>
+									<i class="fa fa-tasks fa-fw"></i> New Task <span
+										class="pull-right text-muted small">4 minutes ago</span>
+								</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="#">
+								<div>
+									<i class="fa fa-upload fa-fw"></i> Server Rebooted <span
+										class="pull-right text-muted small">4 minutes ago</span>
+								</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a class="text-center" href="#"> <strong>See
+									All Alerts</strong> <i class="fa fa-angle-right"></i>
+						</a></li>
+					</ul> <!-- /.dropdown-alerts --></li>
+				<!-- /.dropdown -->
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw"></i>
+						<i class="fa fa-caret-down"></i>
+				</a>
+					<ul class="dropdown-menu dropdown-user">
+						<li><a href="#"><i class="fa fa-user fa-fw"></i> User
+								Profile</a></li>
+						<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+						</li>
+						<li class="divider"></li>
+						<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>
+								Logout</a></li>
+					</ul> <!-- /.dropdown-user --></li>
+				<!-- /.dropdown -->
+			</ul>
+			<!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search../../static."/>
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
-                        <li>
-                            <a th:href="@{/}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a th:href="@{/monitor}">Speed</a>
-                                </li>
-                                <li>
-                                    <a th:href="@{/chartFlot}">Flot Charts</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                               <li>
-                                    <a  th:href="@{/monitor}">Monitor Page</a>
-                                </li>
-                                <li>
-                                    <a href="sbadmin/blank.html" th:href="@{/sbadmin/blank}">Blank Page</a>
-                                    <!-- <a th:href="@{http://www.thymeleaf.org}">thymeleaf.org</a> -->
-                                </li>
-                                <li>
-                                    <a href="login.html" th:href="@{/login}">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
+					<ul class="nav" id="side-menu">
+						<li class="sidebar-search">
+							<div class="input-group custom-search-form">
+								<input type="text" class="form-control"
+									placeholder="Search../../static." /> <span
+									class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+							</div> <!-- /input-group -->
+						</li>
+						<li><a th:href="@{/}"><i class="fa fa-dashboard fa-fw"></i>
+								Dashboard</a></li>
+						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>
+								Charts<span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a th:href="@{/monitor}">Speed</a></li>
+								<li><a th:href="@{/chartFlot}">Flot Charts</a></li>
+							</ul> <!-- /.nav-second-level --></li>
+						<li><a href="tables.html"><i class="fa fa-table fa-fw"></i>
+								Tables</a></li>
+						<li><a href="forms.html"><i class="fa fa-edit fa-fw"></i>
+								Forms</a></li>
+						<li><a href="#"><i class="fa fa-files-o fa-fw"></i>
+								Sample Pages<span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a th:href="@{/monitor}">Monitor Page</a></li>
+								<li><a href="sbadmin/blank.html"
+									th:href="@{/sbadmin/blank}">Blank Page</a> <!-- <a th:href="@{http://www.thymeleaf.org}">thymeleaf.org</a> -->
+								</li>
+								<li><a href="login.html" th:href="@{/login}">Login Page</a>
+								</li>
+							</ul> <!-- /.nav-second-level --></li>
+					</ul>
+				</div>
+				<!-- /.sidebar-collapse -->
+			</div>
+			<!-- /.navbar-static-side -->
+		</nav>
 
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Tables</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            DataTables Advanced Tables
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-									<th>ID</th>
-									<th>单号</th>
-									<th>组织</th>
-									<th>操作码</th>
-									<th>创建时间</th>
-									<th>上传时间</th>
-									<th>失败原因</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+		<div id="page-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">Tables</h1>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">DataTables Advanced Tables</div>
+
+						<div class="form-group col-lg-4 panel-heading">
+							<div class="input-group">
+							   
+							   <form action="#" th:action="@{/search}" th:object="${track}" method="post">
+							   
+								<input type="text" class="form-control" placeholder="单号" th:field="*{waybillNo}" /> 
+								<span class="input-group-btn">
+									<!-- <button class="btn btn-default" type="button" id="search">查询</button> -->
+									<button class="btn btn-default" type="submit" id="search">查询</button>
+								</span>
+								
+								</form>
+								
+								
+							</div>
+							<!-- /input-group -->
+						</div>
+
+						<div class="form-group btn-group panel-heading" data-toggle="buttons">
+
+							<label class="btn btn-default"> <input type="radio"
+								name="options" id="taking" /> 揽收
+							</label> <label class="btn btn-default"> <input type="radio"
+								name="options" id="container" /> 容器
+							</label> <label class="btn btn-default"> <input type="radio"
+								name="options" id="handon" /> 派件
+							</label> <label class="btn btn-default"> <input type="radio"
+								name="options" id="signature" /> 签收
+							</label> <label class="btn btn-default"> <input type="radio"
+								name="options" id="truck" /> 到发车
+							</label> <label class="btn btn-default"> <input type="radio"
+								name="options" id="bill" /> 单据
+							</label>
+
+						</div>
+
+
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<table width="100%"
+								class="table table-striped table-bordered table-hover"
+								id="dataTables-example">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>单号</th>
+										<th>组织</th>
+										<th>操作码</th>
+										<th>创建时间</th>
+										<th>上传时间</th>
+										<th>失败原因</th>
+									</tr>
+								</thead>
+								<tbody>
 									<tr th:each="track : ${list}" class="odd gradeX">
 										<td th:text="${track.id}"></td>
 										<td th:text="${track.waybillNo}"></td>
 										<td th:text="${track.orgCode}"></td>
 										<td th:text="${track.opCode}"></td>
-										<td th:text="${#calendars.format(track.createTime, 'YYYY-MM-dd HH:mm:ss.SSS')}"></td>
-										<td th:text="${#calendars.format(track.uploadTime, 'YYYY-MM-dd HH:mm:ss.SSS')}"></td>
+										<td
+											th:text="${#calendars.format(track.createTime, 'YYYY-MM-dd HH:mm:ss.SSS')}"></td>
+										<td
+											th:text="${#calendars.format(track.uploadTime, 'YYYY-MM-dd HH:mm:ss.SSS')}"></td>
 										<td th:text="${track.errorMessage}"></td>
 									</tr>
-                                </tbody>
-                            </table>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /#page-wrapper -->
+								</tbody>
+							</table>
+							<!-- /.table-responsive -->
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+	</div>
+	<!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script th:src="@{vendor/jquery/jquery.min.js}"></script>
+	<!-- jQuery -->
+	<script th:src="@{vendor/jquery/jquery.min.js}"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script th:src="@{vendor/bootstrap/js/bootstrap.min.js}"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script th:src="@{vendor/bootstrap/js/bootstrap.min.js}"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script th:src="@{vendor/metisMenu/metisMenu.min.js}"></script>
+	<!-- Metis Menu Plugin JavaScript -->
+	<script th:src="@{vendor/metisMenu/metisMenu.min.js}"></script>
 
-    <!-- DataTables JavaScript -->
-    <script th:src="@{vendor/datatables/js/jquery.dataTables.min.js}"></script>
-    <script th:src="@{vendor/datatables-plugins/dataTables.bootstrap.min.js}"></script>
-    <script th:src="@{vendor/datatables-responsive/dataTables.responsive.js}"></script>
+	<!-- DataTables JavaScript -->
+	<script th:src="@{vendor/datatables/js/jquery.dataTables.min.js}"></script>
+	<script
+		th:src="@{vendor/datatables-plugins/dataTables.bootstrap.min.js}"></script>
+	<script
+		th:src="@{vendor/datatables-responsive/dataTables.responsive.js}"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script th:src="@{dist/js/sb-admin-2.js}"></script>
+	<!-- Custom Theme JavaScript -->
+	<script th:src="@{dist/js/sb-admin-2.js}"></script>
 
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
+	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+	<script>
 	    $(document).ready(function() {
 	        $('#dataTables-example').DataTable({
 	            responsive: true
@@ -408,3 +411,5 @@
 </body>
 
 </html>
+
+

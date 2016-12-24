@@ -1,8 +1,13 @@
 package com.tango.bbq.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Track {
+public class Track implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String id;
 	private String waybillNo;
 	private String orgCode;
