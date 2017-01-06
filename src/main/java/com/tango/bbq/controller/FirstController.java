@@ -56,28 +56,7 @@ public class FirstController {
   }
   
   @RequestMapping("/tables")
-  public String tables(Model model){
-//	  ArrayList<Track> list = new ArrayList<Track>();
-//	  Track t = new Track();
-//	  t.setId("123");
-//	  t.setCreateTime(new Date());
-//	  t.setErrorMessage("test");
-//	  t.setOpCode("110");
-//	  t.setOrgCode("999999");
-//	  t.setUploadTime(new Date());
-//	  t.setWaybillNo("1234567890");
-//	  list.add(t);
-//	  
-//	  Track t1 = new Track();
-//	  t1.setId("456");
-//	  t1.setCreateTime(new Date());
-//	  t1.setErrorMessage("test");
-//	  t1.setOpCode("310");
-//	  t1.setOrgCode("888888");
-//	  t1.setUploadTime(new Date());
-//	  t1.setWaybillNo("1111111111");
-//	  list.add(t1);
-//	  
+  public String tables(@ModelAttribute("track")Track track,Model model){
 	  
 	  List<Track> list = firstService.getTrack("");
 	  
@@ -86,8 +65,7 @@ public class FirstController {
   }
   
   @RequestMapping(value ="/search", method = RequestMethod.POST)
-  public String search(Track track, Model model){
-	  System.out.println("**********D00071082508*************** "+ track.getWaybillNo());
+  public String search(@ModelAttribute("track")Track track, Model model){
 	  List<Track> list = firstService.getTrack(track.getWaybillNo());
 	  
 	  model.addAttribute("list", list);
