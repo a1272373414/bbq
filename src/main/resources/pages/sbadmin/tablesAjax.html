@@ -299,40 +299,20 @@
 						<div class="panel-heading">DataTables Advanced Tables</div>
 
 						<!-- <div class="form-group col-lg-4 panel-heading"> -->
-							<div class="input-group,panel-heading">
-							   
-							   <form action="#" th:action="@{/search}" th:object="${track}" method="post">
-							   
-								<input type="text" class="form-control" placeholder="单号" th:field="*{waybillNo}" /> 
-								<span class="input-group-btn">
-									<!-- <button class="btn btn-default" type="button" id="search">查询</button> -->
-									<button class="btn btn-default" type="submit" id="search">查询</button>
-								</span>
-								
-								</form>
-								
-								
-							</div>
-							<!-- /input-group -->
-					<!-- 	</div> -->
+						<div class="input-group,panel-heading">
+							<table>
+								<tr>
+									<td>用户名</td>
+									<td><input type="text" id="username"></input></td>
+								</tr>
+								<tr>
+									<td colspan="2"><input type="button" value="submit"
+										onclick="save()"></input></td>
+								</tr>
+							</table>
+						</div>
 
-<!-- 						<div class="form-group btn-group panel-heading" data-toggle="buttons">
 
-							<label class="btn btn-default"> <input type="radio"
-								name="options" id="taking" /> 揽收
-							</label> <label class="btn btn-default"> <input type="radio"
-								name="options" id="container" /> 容器
-							</label> <label class="btn btn-default"> <input type="radio"
-								name="options" id="handon" /> 派件
-							</label> <label class="btn btn-default"> <input type="radio"
-								name="options" id="signature" /> 签收
-							</label> <label class="btn btn-default"> <input type="radio"
-								name="options" id="truck" /> 到发车
-							</label> <label class="btn btn-default"> <input type="radio"
-								name="options" id="bill" /> 单据
-							</label>
-
-						</div> -->
 
 
 						<!-- /.panel-heading -->
@@ -402,13 +382,48 @@
 	<script th:src="@{dist/js/sb-admin-2.js}"></script>
 
 	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
-	<script>
+
+    
+    <script type="text/javascript" th:inline="javascript">
 	    $(document).ready(function() {
 	        $('#dataTables-example').DataTable({
-	            responsive: true
+	            responsive: true,
+	            bDestroy: true
 	        });
 	    });
-    </script>
+    /*<![CDATA[*/
+        function save() {
+            uname = $("#username").val();
+            if(uname==""){
+                $("#username").after("<font color='red'>必填</font>")
+                /* alert("不可以不填姓名") */
+            }else{
+                $.ajax({
+                    url: "/testAjax",
+                    type: "post",
+                    dataType: "json",
+                    data:{username:uname},
+                    success: function (list) {
+                        //data数据
+ /*                        var dataObj = data; 
+                        $.each(dataObj, function(index, item) {
+                            alert(item.waybillNo);
+                        }); */
+
+                      // $.each(data, function(index, item) {
+	                        $('#dataTables-example').DataTable().ajax.reload()
+                      // });
+                        
+                    },
+                    error:function (data) {
+                        console.log(data)
+                    }
+                });
+            }
+            console.log(uname)
+        }
+        /*]]>*/
+        </script>
 
 </body>
 

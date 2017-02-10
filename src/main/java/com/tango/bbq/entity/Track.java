@@ -15,6 +15,10 @@ public class Track implements Serializable{
 	private Date createTime;
 	private Date uploadTime;
 	private String errorMessage;
+	/**
+	 * 数据来源
+	 */
+	private String source;
 	
 	public String getId() {
 		return id;
@@ -57,5 +61,11 @@ public class Track implements Serializable{
 	}
 	public void setUploadTime(Date uploadTime) {
 		this.uploadTime = uploadTime;
+	}
+	public String getSource() {
+		return source;
+	}
+	public void setSource(String source) {
+		this.source = source;
 	}
 }
