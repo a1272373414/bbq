@@ -100,6 +100,15 @@ public class FirstController {
       return "sbadmin/tablesAjax";
   }
   
+  @RequestMapping(value ="/test")
+  public String test(Model model){
+	  
+//	  List<Track> list = firstService.getTrack("");
+//	  
+//	  model.addAttribute("list", list);
+      return "sbadmin/bootstap-table";
+  }
+  
 
   
 }
